@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - AddCylinder
+  - Trap
+  - Wall
   layers:
   - Default
   - TransparentFX
