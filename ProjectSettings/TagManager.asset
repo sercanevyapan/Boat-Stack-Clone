@@ -4,9 +4,15 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - AddCylinder
   - Trap
   - Wall
+  - Add Boat
+  - RidingBoat
+  - Clone
+  - RightPlatform
+  - LeftPlatform
+  - Platform
+  - FinishWall
   layers:
   - Default
   - TransparentFX

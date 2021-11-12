@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 6298045567995177506}
   - component: {fileID: 2275997591411530514}
   m_Layer: 0
-  m_Name: Add Cylinder
-  m_TagString: AddCylinder
+  m_Name: Add Boat
+  m_TagString: Add Boat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5112316196103223988}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.82, z: -22.14}
+  m_LocalPosition: {x: 0, y: 0.8, z: -22.14}
   m_LocalScale: {x: 1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -93,5 +93,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.0757143, z: 0.99684715}
+  m_Center: {x: 0, y: -0.006720647, z: 0.0015764236}

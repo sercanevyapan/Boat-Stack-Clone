@@ -1,13 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public static PlayerController Current;
-
+    
     public float limitX;
-
     public float runningSpeed;
     public float xSpeed;
     private float _currentRunningSpeed;
@@ -16,26 +15,63 @@ public class PlayerController : MonoBehaviour
     public GameObject ridingBoatPrefab;
     public List<RidingBoat> boats;
 
-  
+    private void Awake()
+    {
+        IncrementBoatVolume(1f);
+   
+    }
 
-    // Start is called before the first frame update
+    private void OnCollisionEnter(Collision collision)
+    {
+
+        PlayerSlope(collision);
+
+       
+    } 
+
+    private void PlayerSlope(Collision collision)
+    {
+        if (collision.transform.tag == "RightPlatform")
+        {
+
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, 15f), 1f);
+        }
+        if (collision.transform.tag == "Platform")
+        {
+
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, 0f), 1f);
+        }
+        if (collision.transform.tag == "LeftPlatform")
+        {
+
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, -15f), 1f);
+        }
+    }
+
     void Start()
     {
-      
-        Current = this;
+    
         _currentRunningSpeed = runningSpeed;
     }
 
-    // Update is called once per frame
-    void Update()
+   
+    void FixedUpdate()
     {
-        float newX = 0;
+
+        PlayerControl();
+        
+    }
+
+    private void PlayerControl()
+    {
+        float newX;
         float touchXDelta = 0;
-        if (Input.touchCount>0 && Input.GetTouch(0).phase == TouchPhase.Moved)
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
         {
-            
-            touchXDelta = Input.GetTouch(0).deltaPosition.x / Screen.width; 
-        }else if (Input.GetMouseButton(0))
+            Debug.Log("touch");
+            touchXDelta = Input.GetTouch(0).deltaPosition.x /*/ Screen.width*/;
+        }
+        else if (Input.GetMouseButton(0))
         {
             touchXDelta = Input.GetAxis("Mouse X");
         }
@@ -49,40 +85,40 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag =="AddCylinder")
+        if (other.tag =="Add Boat")
         {
             IncrementBoatVolume(1f);
             Destroy(other.gameObject);
+            
         }
-        if (other.tag == "Trap")
+        if (other.tag == "Trap" || other.tag == "Wall")
         {
             IncrementBoatVolume(-1f);
-        }
-        if (other.tag == "Wall")
-        {
-            IncrementBoatVolume(-1f);
+            if (boats.Count == 0)
+            {
 
+                GameManager.instance.LoseGame();
+            }
         }
+    
+      
+
     }
-
 
     public void IncrementBoatVolume(float value)
     {
-        if(boats.Count == 0)
-        {
+      
             if (value>0)
             {
                 CreateBoat(value);
             }
-            else
-            {
-                //Gameover
-            }
-        } 
-        else
+      
+        else if(value<0 && boats.Count!=0)
         {
             boats[boats.Count - 1].IncerementBoatVolume(value);
+         
         }
+
     }
 
     public void CreateBoat(float value)
@@ -91,11 +127,24 @@ public class PlayerController : MonoBehaviour
 
         boats.Add(createdBoat);
         createdBoat.IncerementBoatVolume(value);
+     
     }
 
     public void DestroyBoats(RidingBoat boat)
     {
         boats.Remove(boat);
         Destroy(boat.gameObject);
+
+  
+    }
+
+
+
+    public void PlayerStartPosition()
+    {
+      
+        transform.localPosition = new Vector3(0, 0.75f, -23.7999992f);
+        IncrementBoatVolume(1f);
+        limitX = 3;
     }
 }
