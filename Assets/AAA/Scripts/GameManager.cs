@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
 
     public int score, levelScore, totalLevelScore;
 
-    public bool isLevelFinish;
+    public bool isLevelFinish,isSwipeToStart;
 
     public GameObject gameoverScreen, gameStartScreen, gameNextLevelScreen;
 
@@ -34,28 +34,27 @@ public class GameManager : MonoBehaviour
     {
         SaveGameGet();
 
-       
-    }
-
-    private void SwipeToPlay()
-    {
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
-        {
-
-            StartGame();
-        }
-        else if (Input.GetMouseButton(0))
-        {
-            StartGame();
-        }
     }
 
     void Update()
-    {
-        //SwipeToPlay();
+    {  
         SaveGameSet();
         levelScoreText.text = totalLevelScore.ToString();
- 
+        SwipeToStart();
+    }
+
+    private void SwipeToStart()
+    {
+        if (!isSwipeToStart && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
+        {
+            StartGame();
+        }
+        else if (!isSwipeToStart && Input.GetMouseButton(0))
+        {
+            StartGame();
+        }
+
+        isSwipeToStart = true;
     }
 
     public void AddPoint(int point)
@@ -120,7 +119,7 @@ public class GameManager : MonoBehaviour
         RandomLevel();
         //gameNextLevelButton.interactable = true;
         levelScore = 0;
-        
+        isSwipeToStart = false;
     }
 
     public void FinishLevel() // FinisLevel bu methodu çağırır.

@@ -26,16 +26,6 @@ public class RidingBoat : MonoBehaviour
     public void IncerementBoatVolume(float value)
     {
 
-        //if (value > 1)
-        //{
-        //    float leftValue = value - 1;
-        //    int boatCount = playerController.boats.Count;
-        //    transform.localPosition = new Vector3(transform.localPosition.x,                      -0.5f*(boatCount-1)+ -0.25f ,transform.localPosition.z);
-        //    transform.localScale = new Vector3(0.5f,transform.localScale.y,1f);
-        //    playerController.CreateBoat(leftValue);
-
-
-        //}else
         if (value < 0)
         {
 

@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
 {
     
     public float limitX, runningSpeed, xSpeed;
-    //private float _currentRunningSpeed;
 
     public GameObject ridingBoatPrefab;
     public List<RidingBoat> boats;
@@ -45,12 +44,6 @@ public class PlayerController : MonoBehaviour
 
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, -15f), 1f);
         }
-    }
-
-    void Start()
-    {
-    
-        //_currentRunningSpeed = runningSpeed;
     }
 
    
@@ -159,7 +152,6 @@ public class PlayerController : MonoBehaviour
 
   
     }
-
 
 
     public void PlayerStartPosition()
