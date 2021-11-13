@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -32,22 +33,29 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         SaveGameGet();
+
+       
     }
 
-    // Update is called once per frame
+    private void SwipeToPlay()
+    {
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
+        {
+
+            StartGame();
+        }
+        else if (Input.GetMouseButton(0))
+        {
+            StartGame();
+        }
+    }
+
     void Update()
     {
+        //SwipeToPlay();
         SaveGameSet();
         levelScoreText.text = totalLevelScore.ToString();
-        //scoreText.text = score.ToString();
-
-        //Debug.Log(playerController.boats.Count);
-        //if (playerController.boats.Count == 0 && isLevelFinish==false)
-        //{
-
-        //    LoseGame();
-        //}
-
+ 
     }
 
     public void AddPoint(int point)
@@ -83,7 +91,6 @@ public class GameManager : MonoBehaviour
     {
 
         gameoverScreen.SetActive(false);
-        levelController.isCreated = false;
         levelController.RestartGame();
         playerController.PlayerStartPosition();
         StopGame();
@@ -106,13 +113,14 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSecondsRealtime(2);
         levelController.levelCount++;
         gameNextLevelScreen.SetActive(false);
-        levelController.isCreated = false;
+        levelController.NextLevel();
         playerController.PlayerStartPosition();
         gameStartScreen.SetActive(true);
         StopGame();
         RandomLevel();
         //gameNextLevelButton.interactable = true;
         levelScore = 0;
+        
     }
 
     public void FinishLevel() // FinisLevel bu methodu çağırır.
@@ -122,9 +130,7 @@ public class GameManager : MonoBehaviour
           
             gameNextLevelScreen.SetActive(true);
             StopGame();
-        }
-
-            
+        }       
 
     }
 
@@ -156,6 +162,7 @@ public class GameManager : MonoBehaviour
     public void LevelTotalPoint(int xpoint)
     {
 
-        totalLevelScore = levelScore * xpoint;
+        totalLevelScore = levelScore * xpoint *10;
+  
     }
 }

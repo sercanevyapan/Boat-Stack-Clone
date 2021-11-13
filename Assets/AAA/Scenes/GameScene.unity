@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 422223056}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -138,7 +138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &112020783
 Transform:
   m_ObjectHideFlags: 0
@@ -441,6 +441,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 384472554}
   m_CullTransparentMesh: 1
+--- !u!850595691 &422223056
+LightingSettings:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 3
+  m_GIWorkflowMode: 1
+  m_EnableBakedLightmaps: 1
+  m_EnableRealtimeLightmaps: 0
+  m_RealtimeEnvironmentLighting: 1
+  m_BounceScale: 1
+  m_AlbedoBoost: 1
+  m_IndirectOutputScale: 1
+  m_UsingShadowmask: 1
+  m_BakeBackend: 1
+  m_LightmapMaxSize: 1024
+  m_BakeResolution: 40
+  m_Padding: 2
+  m_TextureCompression: 1
+  m_AO: 0
+  m_AOMaxDistance: 1
+  m_CompAOExponent: 1
+  m_CompAOExponentDirect: 0
+  m_ExtractAO: 0
+  m_MixedBakeMode: 2
+  m_LightmapsBakeMode: 1
+  m_FilterMode: 1
+  m_LightmapParameters: {fileID: 15204, guid: 0000000000000000f000000000000000, type: 0}
+  m_ExportTrainingData: 0
+  m_TrainingDataDestination: TrainingData
+  m_RealtimeResolution: 2
+  m_ForceWhiteAlbedo: 0
+  m_ForceUpdates: 0
+  m_FinalGather: 0
+  m_FinalGatherRayCount: 256
+  m_FinalGatherFiltering: 1
+  m_PVRCulling: 1
+  m_PVRSampling: 1
+  m_PVRDirectSampleCount: 32
+  m_PVRSampleCount: 512
+  m_PVREnvironmentSampleCount: 256
+  m_PVREnvironmentReferencePointCount: 2048
+  m_LightProbeSampleCountMultiplier: 4
+  m_PVRBounces: 2
+  m_PVRMinBounces: 1
+  m_PVREnvironmentMIS: 1
+  m_PVRFilteringMode: 1
+  m_PVRDenoiserTypeDirect: 1
+  m_PVRDenoiserTypeIndirect: 1
+  m_PVRDenoiserTypeAO: 1
+  m_PVRFilterTypeDirect: 0
+  m_PVRFilterTypeIndirect: 0
+  m_PVRFilterTypeAO: 0
+  m_PVRFilteringGaussRadiusDirect: 1
+  m_PVRFilteringGaussRadiusIndirect: 5
+  m_PVRFilteringGaussRadiusAO: 2
+  m_PVRFilteringAtrousPositionSigmaDirect: 0.5
+  m_PVRFilteringAtrousPositionSigmaIndirect: 2
+  m_PVRFilteringAtrousPositionSigmaAO: 1
 --- !u!1 &535136572
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,7 +535,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   limitX: 3
   runningSpeed: 10
-  xSpeed: 10
+  xSpeed: 5
   ridingBoatPrefab: {fileID: 4825662680689532989, guid: a8debc84b0be0eb498c18115cf6a64d8, type: 3}
   boats: []
 --- !u!54 &535136574
@@ -515,7 +576,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 535136572}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.75, z: -23.8}
+  m_LocalPosition: {x: 0, y: 0.75, z: -25.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1714472411}
@@ -655,72 +716,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 538160552}
   m_CullTransparentMesh: 1
---- !u!1 &546334494
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 546334496}
-  - component: {fileID: 546334495}
-  m_Layer: 0
-  m_Name: ERSideObjectsLog
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &546334495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 546334494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 576718501}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  QOQDQOOQDDQOOQ: []
-  ints: 
-  roadPresets: []
-  crossingCornerPresets: []
-  sidewalkPresets: []
-  textureData: []
-  presetAssets: []
-  logIndex: 0
-  updateInt: 2
---- !u!4 &546334496
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 546334494}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!115 &576718501
-MonoScript:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  serializedVersion: 5
-  m_Script: 
-  m_DefaultReferences: {}
-  m_Icon: {fileID: 0}
-  m_ExecutionOrder: 0
-  m_ClassName: ERSideObjectLog
-  m_Namespace: EasyRoads3Dv3
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -814,993 +809,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &785111148
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 785111150}
-  - component: {fileID: 785111149}
-  m_Layer: 0
-  m_Name: Road Network
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &785111149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 785111148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 365290288, guid: f56d46228aee4734f9114056c53bb57e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  updateInt: 10
-  newSplatMapRestoreCode: 0
-  toolbarInt: 1
-  oldToolbarInt: 0
-  roadToolbarInt: 0
-  markerToolbarInt: 0
-  menuTexs:
-  - {fileID: 2800000, guid: 34aed1010b525bf4c9cfd7da35361a90, type: 3}
-  - {fileID: 2800000, guid: 32e963efb91d19147842f8bd95d6ac56, type: 3}
-  - {fileID: 2800000, guid: ffc15be4bded7b34f9f406cde082a4a2, type: 3}
-  - {fileID: 2800000, guid: 881f73f964cf5104abc91a5f657615a8, type: 3}
-  - {fileID: 2800000, guid: b2f9adc22d0fa0647880b18b89bf0872, type: 3}
-  - {fileID: 2800000, guid: 8583bfb2058e94a48801d7212430d8d1, type: 3}
-  - {fileID: 2800000, guid: a734eccac0ad8bc49950dd4fbee58611, type: 3}
-  menuGUIContents:
-  - m_Text: 
-    m_Image: {fileID: 2800000, guid: 34aed1010b525bf4c9cfd7da35361a90, type: 3}
-    m_Tooltip: Scene View Status
-  - m_Text: 
-    m_Image: {fileID: 2800000, guid: 32e963efb91d19147842f8bd95d6ac56, type: 3}
-    m_Tooltip: Add Road Object
-  - m_Text: 
-    m_Image: {fileID: 2800000, guid: ffc15be4bded7b34f9f406cde082a4a2, type: 3}
-    m_Tooltip: Add Connection Object
-  - m_Text: 
-    m_Image: {fileID: 2800000, guid: 881f73f964cf5104abc91a5f657615a8, type: 3}
-    m_Tooltip: Update Terrain
-  - m_Text: 
-    m_Image: {fileID: 2800000, guid: b2f9adc22d0fa0647880b18b89bf0872, type: 3}
-    m_Tooltip: General Settings
-  - m_Text: 
-    m_Image: {fileID: 2800000, guid: 8583bfb2058e94a48801d7212430d8d1, type: 3}
-    m_Tooltip: Side Object Manager
-  - m_Text: 
-    m_Image: {fileID: 2800000, guid: a734eccac0ad8bc49950dd4fbee58611, type: 3}
-    m_Tooltip: Info
-  subMenuTexs: []
-  cprefab: {fileID: 0}
-  nodeHandleTexture: {fileID: 0}
-  lockedTexture: {fileID: 2800000, guid: 8fb7d6b5f8b40f34e8048f47afa20f2a, type: 3}
-  unLockedTexture: {fileID: 2800000, guid: eb319a63188c2d44bacc8572c8a2111a, type: 3}
-  favOffTexture: {fileID: 0}
-  favOffFreeTexture: {fileID: 0}
-  favOnTexture: {fileID: 0}
-  selRoadTexture: {fileID: 2800000, guid: 46e81e5d2c8b2144582558b65e45db86, type: 3}
-  headerTexture: {fileID: 2800000, guid: 16ef664a0f7023c4a94fa58f50bf2899, type: 3}
-  sceneGUITex: {fileID: 0}
-  soIcon: {fileID: 0}
-  closeIcon: {fileID: 0}
-  roadObjectsParent: {fileID: 1294094584}
-  connectionObjectsParent: {fileID: 933404096}
-  OCCOQODQDQ: {fileID: 0}
-  roadTypes:
-  - roadTypeName: Default Road
-    id: 0
-    timestamp: 1450386558.4872544
-    roadWidth: 5
-    faceDistance: 4
-    angleTreshold: 45
-    uvTiling: 1
-    uv4Type: 0
-    type: 0
-    detailDistance: 50
-    planarUVs: 0
-    outerIndent: 0
-    roadShapeDataActive: 0
-    roadShapeData:
-      nodes: []
-      hardEdge: []
-      priorityNodeIndexLeft: 0
-      priorityNodeIndexRight: 0
-      nodesV3: []
-      lanes: []
-      leftLanes: 0
-      rightLanes: 0
-      symmetrical: 0
-      leftSidewalkOffset: 0
-      rightSidewalkOffset: 0
-      outerLaneMarkingLeftIndex: 0
-      includeOuterlaneLeftInShape: 0
-      includeOuterlaneRightInShape: 0
-      outerLaneMarkingRightIndex: 0
-      outerOuterLaneMarkingLeftIndex: 0
-      outerOuterLaneMarkingRightIndex: 0
-      selectedNode: 0
-      selectedLaneNode: 0
-      isSymmetrical: 0
-      isset: 0
-    minSpeed: 45
-    maxSpeed: 55
-    speedLimit: 50
-    roadShape: []
-    roadShapeExt: []
-    roadShapeExt2: []
-    doConnectionTri: []
-    doConnectionTriExt: []
-    roadShapeUVs: []
-    roadShapeExtUVs: []
-    roadShapeExtUVs2: []
-    roadShapeUVs2: []
-    preserveUVs: 0
-    hardEdge: []
-    roadShapeVecsString: 
-    defaultSidewalk: 0
-    sidewalks: 0
-    sidewalkHeight: 0.2
-    sidewalkWidth: 2
-    roadMaterial: {fileID: 2100000, guid: f182e2714eb8a714a99ed091081ce16c, type: 2}
-    roadMaterials: []
-    roadPhysicsMaterial: {fileID: 2100000, guid: f182e2714eb8a714a99ed091081ce16c, type: 2}
-    roadPhysicsMaterials: []
-    connectionMaterial: {fileID: 2100000, guid: 3c555588afad81d428ad1704d5d015a7, type: 2}
-    isSideObject: 0
-    isCustomRoad: 0
-    subSegments: 0
-    soData: []
-    soDataExt: []
-    soDataLog: []
-    layer: 0
-    isStatic: 0
-    tag: Untagged
-    splatMapActive: 0
-    splatIndex: 0
-    expandLevel: 1
-    smoothLevel: 1
-    splatOpacity: 1
-    followTerrainContours: 0
-    terrainContoursOffset: 0
-    terrainDeformation: 1
-    defaultIndent: 3
-    defaultSurrounding: 3
-    castShadow: 0
-    randomnessFlag: 0
-    randomYPosition: 0
-    randomMinYPosition: 0
-    randomMaxYPosition: 0
-    minRandomYPositionDistance: 0
-    maxRandomYPositionDistance: 0
-    randomMinRotation: 0
-    randomMaxRotation: 0
-    minRandomRotationDistance: 0
-    maxRandomRotationDistance: 0
-    vegetationStudioMaskLineActive: 0
-    vegetationStudioGrassPerimeter: 0
-    vegetationStudioPlantPerimeter: 0
-    vegetationStudioTreePerimeter: 0
-    vegetationStudioObjectPerimeter: 0
-    vegetationStudioLargeObjectPerimeter: 0
-    vegetationStudioBiomeMaskActive: 0
-    vegetationStudioBiomeMaskDistance: 0
-    vegetationStudioBiomeMaskBlendDistance: 0
-    vegetationStudioBiomeMaskNoiseScale: 0
-    decalPresets: []
-    decalClassPresets: []
-    defaultRamp: 0
-    extrusionType: 0
-    extrusionDistance: 0
-    fixedDistance: 0
-    connectionAngle: 0
-    connectionRadius: 0
-    isRoadShape: 0
-    controlType: 0
-    vertexColor:
-      r: 0
-      g: 0
-      b: 0
-      a: 0
-  - roadTypeName: Default Road
-    id: 1
-    timestamp: 0
-    roadWidth: 5
-    faceDistance: 4
-    angleTreshold: 0
-    uvTiling: 1
-    uv4Type: 0
-    type: 0
-    detailDistance: 50
-    planarUVs: 0
-    outerIndent: 0
-    roadShapeDataActive: 0
-    roadShapeData:
-      nodes: []
-      hardEdge: []
-      priorityNodeIndexLeft: 0
-      priorityNodeIndexRight: 0
-      nodesV3: []
-      lanes: []
-      leftLanes: 0
-      rightLanes: 0
-      symmetrical: 0
-      leftSidewalkOffset: 0
-      rightSidewalkOffset: 0
-      outerLaneMarkingLeftIndex: 0
-      includeOuterlaneLeftInShape: 0
-      includeOuterlaneRightInShape: 0
-      outerLaneMarkingRightIndex: 0
-      outerOuterLaneMarkingLeftIndex: 0
-      outerOuterLaneMarkingRightIndex: 0
-      selectedNode: 0
-      selectedLaneNode: 0
-      isSymmetrical: 0
-      isset: 0
-    minSpeed: 45
-    maxSpeed: 55
-    speedLimit: 50
-    roadShape: []
-    roadShapeExt: []
-    roadShapeExt2: []
-    doConnectionTri: []
-    doConnectionTriExt: []
-    roadShapeUVs: []
-    roadShapeExtUVs: []
-    roadShapeExtUVs2: []
-    roadShapeUVs2: []
-    preserveUVs: 0
-    hardEdge: []
-    roadShapeVecsString: 
-    defaultSidewalk: 0
-    sidewalks: 0
-    sidewalkHeight: 0.2
-    sidewalkWidth: 2
-    roadMaterial: {fileID: 2100000, guid: f182e2714eb8a714a99ed091081ce16c, type: 2}
-    roadMaterials: []
-    roadPhysicsMaterial: {fileID: 0}
-    roadPhysicsMaterials: []
-    connectionMaterial: {fileID: 2100000, guid: 3c555588afad81d428ad1704d5d015a7, type: 2}
-    isSideObject: 0
-    isCustomRoad: 0
-    subSegments: 0
-    soData: []
-    soDataExt: []
-    soDataLog: []
-    layer: 0
-    isStatic: 0
-    tag: Untagged
-    splatMapActive: 0
-    splatIndex: 0
-    expandLevel: 1
-    smoothLevel: 1
-    splatOpacity: 1
-    followTerrainContours: 0
-    terrainContoursOffset: 0
-    terrainDeformation: 0
-    defaultIndent: 3
-    defaultSurrounding: 3
-    castShadow: 0
-    randomnessFlag: 0
-    randomYPosition: 0
-    randomMinYPosition: 0
-    randomMaxYPosition: 0
-    minRandomYPositionDistance: 0
-    maxRandomYPositionDistance: 0
-    randomMinRotation: 0
-    randomMaxRotation: 0
-    minRandomRotationDistance: 0
-    maxRandomRotationDistance: 0
-    vegetationStudioMaskLineActive: 0
-    vegetationStudioGrassPerimeter: 0
-    vegetationStudioPlantPerimeter: 0
-    vegetationStudioTreePerimeter: 0
-    vegetationStudioObjectPerimeter: 0
-    vegetationStudioLargeObjectPerimeter: 0
-    vegetationStudioBiomeMaskActive: 0
-    vegetationStudioBiomeMaskDistance: 0
-    vegetationStudioBiomeMaskBlendDistance: 0
-    vegetationStudioBiomeMaskNoiseScale: 0
-    decalPresets: []
-    decalClassPresets: []
-    defaultRamp: 0
-    extrusionType: 0
-    extrusionDistance: 0
-    fixedDistance: 0
-    connectionAngle: 0
-    connectionRadius: 0
-    isRoadShape: 0
-    controlType: 0
-    vertexColor:
-      r: 0
-      g: 0
-      b: 0
-      a: 0
-  selectedRoadType: 0
-  selectedNewRoadType: 0
-  inspRoadTypes:
-  - roadTypeName: Default Road
-    id: 0
-    timestamp: 1450386558.4872544
-    roadWidth: 5
-    faceDistance: 4
-    angleTreshold: 45
-    uvTiling: 1
-    uv4Type: 0
-    type: 0
-    detailDistance: 50
-    planarUVs: 0
-    outerIndent: 0
-    roadShapeDataActive: 0
-    roadShapeData:
-      nodes: []
-      hardEdge: []
-      priorityNodeIndexLeft: 0
-      priorityNodeIndexRight: 0
-      nodesV3: []
-      lanes: []
-      leftLanes: 0
-      rightLanes: 0
-      symmetrical: 0
-      leftSidewalkOffset: 0
-      rightSidewalkOffset: 0
-      outerLaneMarkingLeftIndex: 0
-      includeOuterlaneLeftInShape: 0
-      includeOuterlaneRightInShape: 0
-      outerLaneMarkingRightIndex: 0
-      outerOuterLaneMarkingLeftIndex: 0
-      outerOuterLaneMarkingRightIndex: 0
-      selectedNode: 0
-      selectedLaneNode: 0
-      isSymmetrical: 0
-      isset: 0
-    minSpeed: 45
-    maxSpeed: 55
-    speedLimit: 50
-    roadShape: []
-    roadShapeExt: []
-    roadShapeExt2: []
-    doConnectionTri: []
-    doConnectionTriExt: []
-    roadShapeUVs: []
-    roadShapeExtUVs: []
-    roadShapeExtUVs2: []
-    roadShapeUVs2: []
-    preserveUVs: 0
-    hardEdge: []
-    roadShapeVecsString: 
-    defaultSidewalk: 0
-    sidewalks: 0
-    sidewalkHeight: 0.2
-    sidewalkWidth: 2
-    roadMaterial: {fileID: 2100000, guid: f182e2714eb8a714a99ed091081ce16c, type: 2}
-    roadMaterials: []
-    roadPhysicsMaterial: {fileID: 2100000, guid: f182e2714eb8a714a99ed091081ce16c, type: 2}
-    roadPhysicsMaterials: []
-    connectionMaterial: {fileID: 2100000, guid: 3c555588afad81d428ad1704d5d015a7, type: 2}
-    isSideObject: 0
-    isCustomRoad: 0
-    subSegments: 0
-    soData: []
-    soDataExt: []
-    soDataLog: []
-    layer: 0
-    isStatic: 0
-    tag: Untagged
-    splatMapActive: 0
-    splatIndex: 0
-    expandLevel: 1
-    smoothLevel: 1
-    splatOpacity: 1
-    followTerrainContours: 0
-    terrainContoursOffset: 0
-    terrainDeformation: 1
-    defaultIndent: 3
-    defaultSurrounding: 3
-    castShadow: 0
-    randomnessFlag: 0
-    randomYPosition: 0
-    randomMinYPosition: 0
-    randomMaxYPosition: 0
-    minRandomYPositionDistance: 0
-    maxRandomYPositionDistance: 0
-    randomMinRotation: 0
-    randomMaxRotation: 0
-    minRandomRotationDistance: 0
-    maxRandomRotationDistance: 0
-    vegetationStudioMaskLineActive: 0
-    vegetationStudioGrassPerimeter: 0
-    vegetationStudioPlantPerimeter: 0
-    vegetationStudioTreePerimeter: 0
-    vegetationStudioObjectPerimeter: 0
-    vegetationStudioLargeObjectPerimeter: 0
-    vegetationStudioBiomeMaskActive: 0
-    vegetationStudioBiomeMaskDistance: 0
-    vegetationStudioBiomeMaskBlendDistance: 0
-    vegetationStudioBiomeMaskNoiseScale: 0
-    decalPresets: []
-    decalClassPresets: []
-    defaultRamp: 0
-    extrusionType: 0
-    extrusionDistance: 0
-    fixedDistance: 0
-    connectionAngle: 0
-    connectionRadius: 0
-    isRoadShape: 0
-    controlType: 0
-    vertexColor:
-      r: 0
-      g: 0
-      b: 0
-      a: 0
-  - roadTypeName: Default Road
-    id: 1
-    timestamp: 0
-    roadWidth: 5
-    faceDistance: 4
-    angleTreshold: 0
-    uvTiling: 1
-    uv4Type: 0
-    type: 0
-    detailDistance: 50
-    planarUVs: 0
-    outerIndent: 0
-    roadShapeDataActive: 0
-    roadShapeData:
-      nodes: []
-      hardEdge: []
-      priorityNodeIndexLeft: 0
-      priorityNodeIndexRight: 0
-      nodesV3: []
-      lanes: []
-      leftLanes: 0
-      rightLanes: 0
-      symmetrical: 0
-      leftSidewalkOffset: 0
-      rightSidewalkOffset: 0
-      outerLaneMarkingLeftIndex: 0
-      includeOuterlaneLeftInShape: 0
-      includeOuterlaneRightInShape: 0
-      outerLaneMarkingRightIndex: 0
-      outerOuterLaneMarkingLeftIndex: 0
-      outerOuterLaneMarkingRightIndex: 0
-      selectedNode: 0
-      selectedLaneNode: 0
-      isSymmetrical: 0
-      isset: 0
-    minSpeed: 45
-    maxSpeed: 55
-    speedLimit: 50
-    roadShape: []
-    roadShapeExt: []
-    roadShapeExt2: []
-    doConnectionTri: []
-    doConnectionTriExt: []
-    roadShapeUVs: []
-    roadShapeExtUVs: []
-    roadShapeExtUVs2: []
-    roadShapeUVs2: []
-    preserveUVs: 0
-    hardEdge: []
-    roadShapeVecsString: 
-    defaultSidewalk: 0
-    sidewalks: 0
-    sidewalkHeight: 0.2
-    sidewalkWidth: 2
-    roadMaterial: {fileID: 2100000, guid: f182e2714eb8a714a99ed091081ce16c, type: 2}
-    roadMaterials: []
-    roadPhysicsMaterial: {fileID: 0}
-    roadPhysicsMaterials: []
-    connectionMaterial: {fileID: 2100000, guid: 3c555588afad81d428ad1704d5d015a7, type: 2}
-    isSideObject: 0
-    isCustomRoad: 0
-    subSegments: 0
-    soData: []
-    soDataExt: []
-    soDataLog: []
-    layer: 0
-    isStatic: 0
-    tag: Untagged
-    splatMapActive: 0
-    splatIndex: 0
-    expandLevel: 1
-    smoothLevel: 1
-    splatOpacity: 1
-    followTerrainContours: 0
-    terrainContoursOffset: 0
-    terrainDeformation: 0
-    defaultIndent: 3
-    defaultSurrounding: 3
-    castShadow: 0
-    randomnessFlag: 0
-    randomYPosition: 0
-    randomMinYPosition: 0
-    randomMaxYPosition: 0
-    minRandomYPositionDistance: 0
-    maxRandomYPositionDistance: 0
-    randomMinRotation: 0
-    randomMaxRotation: 0
-    minRandomRotationDistance: 0
-    maxRandomRotationDistance: 0
-    vegetationStudioMaskLineActive: 0
-    vegetationStudioGrassPerimeter: 0
-    vegetationStudioPlantPerimeter: 0
-    vegetationStudioTreePerimeter: 0
-    vegetationStudioObjectPerimeter: 0
-    vegetationStudioLargeObjectPerimeter: 0
-    vegetationStudioBiomeMaskActive: 0
-    vegetationStudioBiomeMaskDistance: 0
-    vegetationStudioBiomeMaskBlendDistance: 0
-    vegetationStudioBiomeMaskNoiseScale: 0
-    decalPresets: []
-    decalClassPresets: []
-    defaultRamp: 0
-    extrusionType: 0
-    extrusionDistance: 0
-    fixedDistance: 0
-    connectionAngle: 0
-    connectionRadius: 0
-    isRoadShape: 0
-    controlType: 0
-    vertexColor:
-      r: 0
-      g: 0
-      b: 0
-      a: 0
-  inspRoadTypeInts: 0000000001000000
-  decalPresets: []
-  roadWidth: 5
-  roadMaterial: {fileID: 2100000, guid: f182e2714eb8a714a99ed091081ce16c, type: 2}
-  crossingMaterial: {fileID: 2100000, guid: f182e2714eb8a714a99ed091081ce16c, type: 2}
-  roundAboutMaterial: {fileID: 2100000, guid: 55e19257e99adea4380d1160ee92af9f, type: 2}
-  roundAboutConnectionMaterial: {fileID: 0}
-  roundAboutRoadMaterial: {fileID: 2100000, guid: f182e2714eb8a714a99ed091081ce16c, type: 2}
-  sidewalkMaterial: {fileID: 0}
-  targetMaterial: {fileID: 0}
-  sourceTerrain: {fileID: 0}
-  roadMaterials:
-  - dirt material
-  - road material
-  connectionMaterials:
-  - crossing material
-  selectedMaterial: 0
-  selectedConnectionMaterial: 0
-  materials: []
-  selectedRoadRoadType: 1
-  roadOptions: 1
-  sidewalkOptions: 0
-  markerOptions: 1
-  showRoadSideObjects: 0
-  markerSOOptions: 1
-  roadTerrainOptions: 1
-  camFlyOver: 1
-  advancedRoadOptions: 1
-  advancedMarkerOptions: 1
-  selectedRoadMaterial: 0
-  roadTextureInfoIndex: 0
-  selectedRoadTexture: {fileID: 0}
-  selectedRoadWidth: 0
-  selectedRoadLeftOffset: 0
-  selectedRoadRightOffset: 0
-  selectedRoadLeftInnerOffset: 0
-  selectedRoadRightInnerOffset: 0
-  selectedCrossingMaterial: 0
-  crossingTextureInfoIndex: 0
-  handleSelection: 1
-  positionHandleSelection: 1
-  markerDirXZ: 0
-  defaultCrossing: {fileID: 0}
-  defaultTCrossing: {fileID: 0}
-  defaultCulDeSac: {fileID: 0}
-  defaultRoundabout: {fileID: 0}
-  tex: {fileID: 0}
-  infoTexture: {fileID: 0}
-  showAllPrefabs: 1
-  standardPrefabsFlag: 0
-  sceneSettingsFoldOut: 0
-  sceneRoadsFoldOut: 0
-  scenePrefabsFoldOut: 0
-  sidewalksFoldOut: 0
-  terrainManagementFoldOut: 0
-  importRoadDataFoldOut: 0
-  lodGroupsFoldOut: 0
-  defaultMaterialsFoldOut: 0
-  aiTrafficFoldout: 0
-  kmlFlag: 0
-  osmFlag: 0
-  useOSMHeights: 0
-  heightRatio: 1
-  dynamicPrefabsFoldOut: 1
-  customPrefabsFoldOut: 1
-  dynamicFavList: []
-  customFavList: []
-  prefabsDisplayType: 0
-  ignoreTerrainAlerts: 0
-  osmTerrainTopLon: 0
-  osmTerrainBottomLon: 0
-  osmTerrainLeftLat: 0
-  osmTerrainRightLat: 0
-  terrainMinIndent: 0
-  minIndent: 3
-  minSurrounding: 3
-  maxIndentSurrounding: 50
-  terrainY: -10000
-  terrainDetailSplatX: 50
-  terrainDetailSplatY: 50
-  detailOffsetVec: {x: 50, y: 0, z: 50}
-  raise: 0
-  baseVector: {x: 0, y: 0, z: 0}
-  mirrorCrossings: 1
-  terrainNames:
-  - All Terrains
-  terrainObjects:
-  - {fileID: 0}
-  terrainSplatTextures:
-  - Splat 1 - Grass ER
-  activeTerrain: {fileID: 0}
-  activeTerrainY: 0
-  selectedTerrain: 0
-  selectedRoadsOnly: 0
-  terrainDone: 0
-  enableBackWithoutRestore: 0
-  detailDistance: 3
-  treeDistance: 5
-  doHeightmap: 1
-  doTrees: 1
-  soTrees: 1
-  doDetail: 1
-  terrainRect:
-    x: 0
-    y: 0
-    width: 0
-    height: 0
-  tunnelObjects: []
-  surfaceObjects: []
-  preserveTerrainFloat: 1
-  terrainSmoothIndentDistance: 1
-  terrainSmoothSurroundingDistance: 1
-  indentSmoothStep: 0
-  surroundingSmoothStep: 0
-  terrainRaycastHeight: 100
-  doTangents: 1
-  doLightmapUVs: 0
-  doLODGroups: 0
-  doSplatmaps: 0
-  sLayer: 31
-  terrainHits: []
-  osmCrossingPoints: []
-  cornerPresets: []
-  sidewalkPresets: []
-  sidewalks: []
-  selectedSidewalk: 0
-  selectedRoadTypeSidewalk: 0
-  osmMotorway: 0
-  osmMotorwayLink: 0
-  osmTrunk: 0
-  osmPrimary: 0
-  osmSecondary: 0
-  osmTertiary: 0
-  osmUnclassified: 0
-  osmResidential: 0
-  osmService: 0
-  osmTrack: 0
-  osmPath: 0
-  osmWalkway: 0
-  osmRaceway: 0
-  osmHighwayStringInt: 0
-  osmMotorwayFlag: 1
-  osmMotorwayLinkFlag: 1
-  osmTrunkFlag: 1
-  osmPrimaryFlag: 1
-  osmSecondaryFlag: 1
-  osmTertiaryFlag: 1
-  osmUnclassifiedFlag: 1
-  osmResidentialFlag: 1
-  osmServiceFlag: 1
-  osmTrackFlag: 1
-  osmPathFlag: 1
-  osmWalkwayFlag: 0
-  osmRacewayFlag: 1
-  osmHighwayString: 
-  kmlRoadType: 0
-  lodGroups: 0
-  LODLevels: 4
-  LODLevelValues:
-  - 0.6
-  - 0.4
-  - 0.2
-  - 0
-  LODLevelResolution:
-  - 0.9
-  - 0.8
-  - 0.6
-  - 0.4
-  embedRoadShape: 0
-  hideSurfaces: 1
-  showSurfaces: 0
-  useLightProbes: 0
-  hideLockedObjects: 0
-  ODDCCDDCQQ: 0
-  isInBuildMode: 0
-  progressFlag: 0
-  progressTerrain: 1
-  progressStatus: 1
-  progressMax: 1
-  QOQDQOOQDDQOOQ: []
-  sideObjectNames: []
-  selSideObject: 0
-  selSubSideObject: 0
-  soID: 
-  sideObjectName: 
-  sideObjectType: 0
-  sideObjectSource: {fileID: 0}
-  soEndObject: {fileID: 0}
-  sideObjectTerrainVegetationInt: 0
-  prefabChildHandling: 0
-  sideObjectDistance: 1
-  soYAxisRotation: 0
-  soSidewaysDistance: 0
-  soSidewaysDistanceHandling: 0
-  soDensity: 1
-  soOffset: 0
-  soTerrainAligment: 0
-  soCombine: 0
-  soWeld: 0
-  soControllerType: 0
-  soMaterial: {fileID: 0}
-  soXPosition: 0
-  soYPosition: 0
-  soMarkerActive: 1
-  enableSOHandles: 1
-  enableShapeNodeHandles: 0
-  enableSOShapeNodeHandles: 0
-  displayCriticalPoints: 1
-  highlightRoad: 1
-  highlightMarkerSection: 1
-  highlightIndents: 1
-  highlightSurroundings: 1
-  tempHighlights: 0
-  tempHighlightRoad: 0
-  tempHighlightIndents: 0
-  tempHighlightSurroundings: 0
-  highlightSideObject: 1
-  highlightRoadColor:
-    r: 0.39
-    g: 0.53
-    b: 0.9
-    a: 0.1
-  highlightMarkerColor:
-    r: 0.6
-    g: 0.15
-    b: 0.15
-    a: 0.25
-  highlightIndentColor:
-    r: 1
-    g: 1
-    b: 1
-    a: 0.1
-  highlightSurroundingColor:
-    r: 1
-    g: 1
-    b: 1
-    a: 0.05
-  onlyShowSelectedRoad: 0
-  soDeformationObjects: []
-  soSplatmapObjects: []
-  buildSOinEditMode: 1
-  tangentsInEditMode: 0
-  calculateSmoothNormals: 1
-  importSideObjectsAlert: 1
-  importRoadPresetsAlert: 1
-  importCrossingPresetsAlert: 0
-  importSidewalkPresetsAlert: 0
-  updateSideObjectsAlert: 0
-  updateRoadPresetsAlert: 0
-  updateCrossingPresetsAlert: 0
-  updateSidewalkPresetsAlert: 0
-  waypointDistance: 10
-  RoadObjectsSoUpdates: []
-  assetsFolderID: 
-  meshSurface: {fileID: 0}
-  meshTerrainCollider: {fileID: 0}
-  markerScale: 1
-  markerDistance: 200
-  minMarkerDistance: 100
-  maxMarkerDistance: 500
-  debugFlag: 0
-  leftTHandles: []
-  rightTHandles: []
-  roadNetworkY: 0
-  ignoreMinIndents: 0
-  zoomStart: {x: 0, y: 0, z: 0}
-  zoomEnd: {x: 0, y: 0, z: 0}
-  lookAtStart: {x: 0, y: 0, z: 0}
-  lookAtEnd: {x: 0, y: 0, z: 0}
-  zoomRot: {x: 0, y: 0, z: 0, w: 0}
-  zoomStartTime: 0
-  hideSurfaceHandles: 0
-  tempHideSurfaceHandles: 1
-  dirtyBool: 0
-  dirtyOnSceneBool: 0
-  forceRoadNetworkSelect: 0
-  ODQODCQDOC: 1
-  OCCOQODQDQScript: {fileID: 0}
-  ODDCCQQCOQCrossingsScript: {fileID: 0}
-  ODDCCQQCOQScript: {fileID: 0}
-  OCCOQODQDQElement: -1
-  OQDDOQOOCC: -1
-  OOODDOCCQC: {fileID: 0}
-  ODDOOCQDQD: {fileID: 0}
-  OQCCQCODCD: -1
-  selectedRoadSOMarker: -1
-  selectedMarkerNode: -1
-  selectedMarkerNodes: 
-  selectedMarkerSONode: -1
-  selectedMarkerSONodes: 
-  selectedObjects: []
-  selectedExitRoad: -1
-  newRoadFlag: 0
-  roadTypeUpdateFlag: 1
-  roadUpdateDragFlag: 0
-  roadScripts: []
-  prefabScripts: []
-  globalGridActive: 0
-  gridGUIActive: 0
-  globalGridColor:
-    r: 0.35
-    g: 0.5
-    b: 0.9
-    a: 0.9
-  globalGridSize: 10
-  globalGridRadius: 1000
-  globalGridRotation: 0
-  gridOffset: {x: 0, y: 0}
-  ggTL: {x: 0, y: 0, z: 0}
-  ggBL: {x: 0, y: 0, z: 0}
-  ggBR: {x: 0, y: 0, z: 0}
-  localGridActive: 0
-  localGrids: []
-  selectedLocalGrid: 0
-  fbxExport: 0
-  sw:
-    name: 
-    id: 0
-    timestamp: 0
-    sidewalkWidth: 1.5
-    curbHeight: 0.25
-    curbDepth: 0.25
-    beveledCurb: 0
-    beveledHeight: 0
-    beveledDepth: 0
-    outerCurb: 0
-    roadSideCurbUVControl: 0
-    outerSideCurbUVControl: 0
-    material: {fileID: 0}
-    hardEdges: 0
-    hardEdgePadding: 0
-    shape: []
-    sidewalkUVs: []
-    curbUVs: []
-    doConnectionTri: []
-    tileRect:
-      x: 0
-      y: 0
-      width: 0
-      height: 0
-    tileSize: 1
-    tiling: 1
-    uvRatio: 1
-    minEnd: 1
-    maxEnd: 1
-    lockUVs: 0
-    cornerRadius: 1
-    cornerSegments: 5
-    innerSegmentDistance: 0.5
-    pavementIndex: 2
-  roadUpdated: 0
-  clampUVs: 1
-  soCategoryInt: 0
-  soRoadCategoryInt: 0
-  minRoadWidth: 1
-  maxRoadWidth: 75
-  maxCurbHeight: 0.5
-  minCornerRadius: 0.5
-  maxCornerRadius: 5
-  SoTestObject: {fileID: 0}
-  lockRoadNetwork: 0
-  showNotifications: 1
-  multipleTerrainsWarning: 0
-  OOCQQDQQOC: []
-  OCCDDQQCQC: []
-  textureCounter: 0
-  vegetationStudio: 0
-  vegetationStudioPro: 0
-  vegetationStudioActive: 0
-  vegetationStudioMaskLineActive: 1
-  vegetationStudioGrassPerimeter: 2
-  vegetationStudioPlantPerimeter: 3
-  vegetationStudioTreePerimeter: 4
-  vegetationStudioObjectPerimeter: 3
-  vegetationStudioLargeObjectPerimeter: 4
-  vegetationStudioGrassPerimeterMax: 1
-  vegetationStudioPlantPerimeterMax: 3
-  vegetationStudioTreePerimeterMax: 4
-  vegetationStudioObjectPerimeterMax: 3
-  vegetationStudioLargeObjectPerimeterMax: 4
-  vegetationStudioBiomeMaskActive: 0
-  vegetationStudioBiomeMaskDistance: 0
-  vegetationStudioBiomeMaskBlendDistance: 0
-  vegetationStudioBiomeMaskNoiseScale: 0
-  aiTraffic: 0
-  aiMatchingLanesOnly: 1
-  aiconnectNonMatchinglaneCounts: 1
-  aiIgnoreConnections: 1
-  displayLaneData: 0
-  rightHandDriving: 1
-  leftLaneHandleColour:
-    r: 0.1
-    g: 0.1
-    b: 0.1
-    a: 0.75
-  rightLaneHandleColour:
-    r: 1
-    g: 1
-    b: 1
-    a: 0.75
-  laneHandleSelectedColour:
-    r: 1
-    g: 1
-    b: 0
-    a: 0.5
-  roadUvThreshold: 1750
-  updateQueue: 0
-  logChange: 0
-  debugMode: 0
-  RoadNetworkInitFlag: 1
-  excludeFromSelection: []
-  addExcludeFromSelection: {fileID: 0}
-  shapeUVColor:
-    r: 0
-    g: 0
-    b: 0
-    a: 1
-  startCapColor:
-    r: 0.35
-    g: 0.5
-    b: 0.9
-    a: 1
-  endCapColor:
-    r: 0.35
-    g: 0.5
-    b: 0.9
-    a: 1
-  soSectionMaterial: {fileID: 0}
-  v32b4Flag: 1
-  ctrlKey: 0
---- !u!4 &785111150
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 785111148}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 933404096}
-  - {fileID: 1294094584}
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &817830294
 GameObject:
   m_ObjectHideFlags: 0
@@ -1972,62 +980,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 886943825}
   m_CullTransparentMesh: 1
---- !u!1 &933404095
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 933404096}
-  - component: {fileID: 933404098}
-  - component: {fileID: 933404097}
-  m_Layer: 0
-  m_Name: Connection Objects
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &933404096
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 933404095}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 785111150}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &933404097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 933404095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1994553136, guid: f56d46228aee4734f9114056c53bb57e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &933404098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 933404095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1419717442, guid: f56d46228aee4734f9114056c53bb57e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -2105,13 +1057,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0, y: -0.12885083, z: -0, w: 0.99166405}
-  m_LocalPosition: {x: 3.2, y: 4.55, z: -35.39}
+  m_LocalRotation: {x: 0, y: -0.12186928, z: 0, w: 0.9925462}
+  m_LocalPosition: {x: 3.99, y: 5, z: -38.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: -14.806, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -14, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2126,9 +1078,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 535136576}
   cameraVector3Position:
-  - 2
-  - 3
-  - 10
+  - 4
+  - 4
+  - 12
 --- !u!1 &984778739
 GameObject:
   m_ObjectHideFlags: 0
@@ -2397,10 +1349,10 @@ RectTransform:
   m_Father: {fileID: 886943826}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 125}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 292, y: 584}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1109079020
 MonoBehaviour:
@@ -2471,7 +1423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2496,49 +1448,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1109079018}
   m_CullTransparentMesh: 1
---- !u!1 &1294094583
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1294094584}
-  - component: {fileID: 1294094585}
-  m_Layer: 0
-  m_Name: Road Objects
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1294094584
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1294094583}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 785111150}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1294094585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1294094583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1994553136, guid: f56d46228aee4734f9114056c53bb57e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1425359614
 GameObject:
   m_ObjectHideFlags: 0
@@ -3347,10 +2256,10 @@ RectTransform:
   m_Father: {fileID: 1109079019}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 160.1}
+  m_SizeDelta: {x: 292, y: 584}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2041419357
 MonoBehaviour:
@@ -3374,7 +2283,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -3385,7 +2294,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tap To Start
+  m_Text: Swipe to Play
 --- !u!222 &2041419358
 CanvasRenderer:
   m_ObjectHideFlags: 0

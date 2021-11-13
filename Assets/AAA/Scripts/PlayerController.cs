@@ -3,22 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerController : MonoBehaviour
 {
     
-    public float limitX;
-    public float runningSpeed;
-    public float xSpeed;
-    private float _currentRunningSpeed;
+    public float limitX, runningSpeed, xSpeed;
+    //private float _currentRunningSpeed;
 
-   
     public GameObject ridingBoatPrefab;
     public List<RidingBoat> boats;
+
 
     private void Awake()
     {
         IncrementBoatVolume(1f);
-   
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -51,14 +50,16 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
     
-        _currentRunningSpeed = runningSpeed;
+        //_currentRunningSpeed = runningSpeed;
     }
 
    
     void FixedUpdate()
     {
-
-        PlayerControl();
+       
+            PlayerControl();
+        
+        
         
     }
 
@@ -68,8 +69,8 @@ public class PlayerController : MonoBehaviour
         float touchXDelta = 0;
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
         {
-            Debug.Log("touch");
-            touchXDelta = Input.GetTouch(0).deltaPosition.x /*/ Screen.width*/;
+        
+            touchXDelta = Input.GetTouch(0).deltaPosition.x ;
         }
         else if (Input.GetMouseButton(0))
         {
@@ -79,8 +80,12 @@ public class PlayerController : MonoBehaviour
         newX = transform.position.x + xSpeed * touchXDelta * Time.deltaTime;
         newX = Mathf.Clamp(newX, -limitX, limitX);
 
-        Vector3 newPosition = new Vector3(newX, transform.position.y, transform.position.z + _currentRunningSpeed * Time.deltaTime);
+    
+
+        Vector3 newPosition = new Vector3(newX, transform.position.y, transform.position.z + runningSpeed* Time.deltaTime);
         transform.position = newPosition;
+
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -100,9 +105,26 @@ public class PlayerController : MonoBehaviour
                 GameManager.instance.LoseGame();
             }
         }
-    
-      
 
+        if (other.tag == "FinishLevel")
+        {
+            GameManager.instance.isLevelFinish = true;
+            GameManager.instance.LevelTotalPoint(boats.Count);
+
+         
+            
+        }
+
+        if (other.tag=="FinishWall")
+        {
+            IncrementBoatVolume(-1f);
+            if ( boats.Count <= 0)
+            {
+                GameManager.instance.FinishLevel();
+             
+
+            }
+        }
     }
 
     public void IncrementBoatVolume(float value)
@@ -147,4 +169,19 @@ public class PlayerController : MonoBehaviour
         IncrementBoatVolume(1f);
         limitX = 3;
     }
+
+
+    public void BoostPlayerSpeed()
+    {
+        runningSpeed = 15;
+        StartCoroutine(NormalPlayerSpeed());
+    }
+
+    IEnumerator NormalPlayerSpeed()
+    {
+        yield return new WaitForSecondsRealtime(2f);
+        runningSpeed = 10;
+    }
+    
+
 }

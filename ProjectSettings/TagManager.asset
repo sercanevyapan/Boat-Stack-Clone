@@ -13,6 +13,7 @@ TagManager:
   - LeftPlatform
   - Platform
   - FinishWall
+  - FinishLevel
   layers:
   - Default
   - TransparentFX
