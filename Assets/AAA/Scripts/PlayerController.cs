@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using PathCreation;
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,46 +12,29 @@ public class PlayerController : MonoBehaviour
     public GameObject ridingBoatPrefab;
     public List<RidingBoat> boats;
 
+    public GameObject diamond;
 
-    private void Awake()
+    public Animator anim;
+
+    public Rigidbody m_Rigidbody;
+
+    public bool isPlayerControlActive=true;
+
+    //public PathCreator pathCreator;
+    //float distanceTravelled;
+
+    public void AddBoatStart()
     {
         IncrementBoatVolume(1f);
-
     }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-
-        PlayerSlope(collision);
-
-       
-    } 
-
-    private void PlayerSlope(Collision collision)
-    {
-        if (collision.transform.tag == "RightPlatform")
-        {
-
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, 15f), 1f);
-        }
-        if (collision.transform.tag == "Platform")
-        {
-
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, 0f), 1f);
-        }
-        if (collision.transform.tag == "LeftPlatform")
-        {
-
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, -15f), 1f);
-        }
-    }
-
    
     void FixedUpdate()
     {
-       
+        if (isPlayerControlActive)
+        {
             PlayerControl();
-        
+        }
+           
         
         
     }
@@ -73,11 +56,14 @@ public class PlayerController : MonoBehaviour
         newX = transform.position.x + xSpeed * touchXDelta * Time.deltaTime;
         newX = Mathf.Clamp(newX, -limitX, limitX);
 
-    
 
-        Vector3 newPosition = new Vector3(newX, transform.position.y, transform.position.z + runningSpeed* Time.deltaTime);
+        //distanceTravelled += runningSpeed * Time.deltaTime;
+
+        //transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled);
+        
+
+        Vector3 newPosition = new Vector3(newX, transform.position.y, transform.position.z + runningSpeed * Time.deltaTime);
         transform.position = newPosition;
-
 
     }
 
@@ -96,6 +82,7 @@ public class PlayerController : MonoBehaviour
             {
 
                 GameManager.instance.LoseGame();
+                
             }
         }
 
@@ -103,9 +90,7 @@ public class PlayerController : MonoBehaviour
         {
             GameManager.instance.isLevelFinish = true;
             GameManager.instance.LevelTotalPoint(boats.Count);
-
-         
-            
+           
         }
 
         if (other.tag=="FinishWall")
@@ -114,9 +99,15 @@ public class PlayerController : MonoBehaviour
             if ( boats.Count <= 0)
             {
                 GameManager.instance.FinishLevel();
-             
 
             }
+        }
+
+        if (other.tag == "Diamond")
+        {       
+            GameManager.instance.AddPoint(1);
+
+            BoostPlayerSpeed();
         }
     }
 
@@ -145,14 +136,22 @@ public class PlayerController : MonoBehaviour
      
     }
 
-    public void DestroyBoats(RidingBoat boat)
+    public void DropBoats(RidingBoat boat)
     {
         boats.Remove(boat);
-        Destroy(boat.gameObject);
+        boat.gameObject.transform.parent = null;
 
-  
     }
 
+
+    public void DestroyBoats()
+    {
+         GameObject[] boats = GameObject.FindGameObjectsWithTag("RidingBoat");
+        foreach (var boat in boats)
+        {
+            Destroy(boat);
+        }
+    }
 
     public void PlayerStartPosition()
     {
@@ -160,6 +159,8 @@ public class PlayerController : MonoBehaviour
         transform.localPosition = new Vector3(0, 0.75f, -23.7999992f);
         IncrementBoatVolume(1f);
         limitX = 3;
+        anim.SetTrigger("idle");
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, 0), 1f);
     }
 
 
@@ -174,6 +175,25 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSecondsRealtime(2f);
         runningSpeed = 10;
     }
+  
+    public void PlayerControlActiveFalse()
+    {
+        isPlayerControlActive = false;
+    }
+
+    public void PlayerControlActiveTrue()
+    {
+        isPlayerControlActive = true;
+    }
+
+
+    public void WinAnimation()
+    {
+        anim.SetTrigger("Win");
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 180, 0), Time.deltaTime * 100f);
+    }
     
 
+
 }
+ 

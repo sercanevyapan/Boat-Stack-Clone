@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 61
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f25dfad3e8c52534da547bf2d8bd4d15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDrawerMode: 0
+  isNormalsEditorMode: 0
+  drawCurveSmoothAcuteAngles: 1
+  drawCurveSegmentLength: 5
+  drawCurveFirstPointHook: 0.33
+  drawCurveSecondPointHook: 0.66
+  drawPoints: 1
+  drawSpline: 1
+  drawNormals: 0
+  showTransformHandle: 1
+  alwaysDrawSplineOnScene: 1

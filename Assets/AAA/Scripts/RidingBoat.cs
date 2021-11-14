@@ -14,24 +14,15 @@ public class RidingBoat : MonoBehaviour
     }
 
 
-
-    private void OnCollisionStay(Collision collision)
-    {
-        if (collision.transform.tag == "RightPlatform")
-        {
-            playerController.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, 20f), Time.deltaTime * 5.0f);
-        }
-    }
-
     public void IncerementBoatVolume(float value)
     {
 
         if (value < 0)
         {
 
-            playerController.DestroyBoats(this);
+            playerController.DropBoats(this);
+          
 
-     
         }
         else
         {

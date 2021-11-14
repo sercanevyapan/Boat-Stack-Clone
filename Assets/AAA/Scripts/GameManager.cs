@@ -22,12 +22,15 @@ public class GameManager : MonoBehaviour
 
     public GameObject player;
 
+    public Button gameNextLevelButton;
+
     private void Awake()
     {
         instance = this;
         StopGame();
         gameoverScreen.SetActive(false);
         gameNextLevelScreen.SetActive(false);
+        playerController.AddBoatStart();
     }
 
     void Start()
@@ -88,14 +91,15 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
-
+        
         gameoverScreen.SetActive(false);
         levelController.RestartGame();
+        playerController.DestroyBoats();
         playerController.PlayerStartPosition();
         StopGame();
         gameStartScreen.SetActive(true);
-
-
+        
+        
     }
 
     public void NextLevel() //GameNextLevel'deki nextLevel butonu bu methodu çalıştırır.
@@ -107,35 +111,46 @@ public class GameManager : MonoBehaviour
 
     IEnumerator NextLevelMethod()
     {
-        //gameNextLevelButton.interactable = false;
+        gameNextLevelButton.interactable = false;
         score = score + totalLevelScore;
         yield return new WaitForSecondsRealtime(2);
         levelController.levelCount++;
         gameNextLevelScreen.SetActive(false);
         levelController.NextLevel();
+        playerController.DestroyBoats();
         playerController.PlayerStartPosition();
         gameStartScreen.SetActive(true);
         StopGame();
         RandomLevel();
-        //gameNextLevelButton.interactable = true;
         levelScore = 0;
         isSwipeToStart = false;
+        playerController.PlayerControlActiveTrue();
+        gameNextLevelButton.interactable = true;
     }
 
     public void FinishLevel() // FinisLevel bu methodu çağırır.
     {
         if (isLevelFinish)
         {
-          
-            gameNextLevelScreen.SetActive(true);
-            StopGame();
+            playerController.PlayerControlActiveFalse();
+            playerController.WinAnimation();
+         
+            StartCoroutine(StartFinishMethod());
+            
         }       
 
     }
 
+    IEnumerator StartFinishMethod()
+    {
+        yield return new WaitForSecondsRealtime(4);
+        gameNextLevelScreen.SetActive(true);
+        StopGame();
+    }
+
     private void SaveGameGet()
     {
-        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
 
         score = PlayerPrefs.GetInt("score");
         levelController.levelCount = PlayerPrefs.GetInt("level");
