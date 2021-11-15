@@ -9,8 +9,6 @@ TagManager:
   - Add Boat
   - RidingBoat
   - Clone
-  - RightPlatform
-  - LeftPlatform
   - Platform
   - FinishWall
   - FinishLevel

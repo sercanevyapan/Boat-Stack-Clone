@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using PathCreation;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -20,8 +20,6 @@ public class PlayerController : MonoBehaviour
 
     public bool isPlayerControlActive=true;
 
-    //public PathCreator pathCreator;
-    //float distanceTravelled;
 
     public void AddBoatStart()
     {
@@ -55,11 +53,6 @@ public class PlayerController : MonoBehaviour
 
         newX = transform.position.x + xSpeed * touchXDelta * Time.deltaTime;
         newX = Mathf.Clamp(newX, -limitX, limitX);
-
-
-        //distanceTravelled += runningSpeed * Time.deltaTime;
-
-        //transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled);
         
 
         Vector3 newPosition = new Vector3(newX, transform.position.y, transform.position.z + runningSpeed * Time.deltaTime);
