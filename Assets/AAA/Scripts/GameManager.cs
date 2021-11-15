@@ -98,8 +98,8 @@ public class GameManager : MonoBehaviour
         playerController.PlayerStartPosition();
         StopGame();
         gameStartScreen.SetActive(true);
-        
-        
+        levelScore = 0;
+
     }
 
     public void NextLevel() //GameNextLevel'deki nextLevel butonu bu methodu çalıştırır.
