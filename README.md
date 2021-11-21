@@ -1,9 +1,9 @@
 # Boat Stack Clone
 
- ## Game Play Video
+ ## GamePlay Video
  
 
- [Game Play Video](https://youtu.be/-3267K6h4WE)
+ [GamePlay Video](https://youtu.be/-3267K6h4WE)
  
  ## Apk
  
